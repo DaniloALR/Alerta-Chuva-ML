@@ -1,0 +1,118 @@
+{
+  "integridade": {
+    "dias_comparados": 1743,
+    "dias_identicos_%": 99.94,
+    "meses_comparados": 169,
+    "meses_identicos_%": 100.0
+  },
+  "split": [
+    {
+      "index": "treino",
+      "período": "2006-08-24 a 2021-12-31",
+      "dias": 5333,
+      "eventos ≥20mm": 401,
+      "prevalência %": 7.52
+    },
+    {
+      "index": "teste",
+      "período": "2022-01-01 a 2025-04-24",
+      "dias": 1026,
+      "eventos ≥20mm": 81,
+      "prevalência %": 7.89
+    }
+  ],
+  "melhores_parametros": {
+    "learning_rate": 0.01,
+    "max_depth": 3,
+    "n_estimators": 300
+  },
+  "metricas": {
+    "Treino (2006–2021)": {
+      "Average Precision (PR-AUC)": 0.4063,
+      "ROC-AUC": 0.8913,
+      "Brier (menor = melhor)": 0.1471,
+      "Precisão": 0.2333,
+      "Recall (eventos avisados)": 0.8728,
+      "F1": 0.3682,
+      "F2": 0.5638
+    },
+    "Teste (2022–2025)": {
+      "Average Precision (PR-AUC)": 0.2699,
+      "ROC-AUC": 0.8198,
+      "Brier (menor = melhor)": 0.176,
+      "Precisão": 0.1957,
+      "Recall (eventos avisados)": 0.7778,
+      "F1": 0.3127,
+      "F2": 0.4876
+    },
+    "diferença": {
+      "Average Precision (PR-AUC)": 0.1364,
+      "ROC-AUC": 0.0715,
+      "Brier (menor = melhor)": -0.0289,
+      "Precisão": 0.0377,
+      "Recall (eventos avisados)": 0.095,
+      "F1": 0.0556,
+      "F2": 0.0762
+    }
+  },
+  "baselines": {
+    "XGBoost": {
+      "AP (teste)": 0.27,
+      "ROC-AUC (teste)": 0.82,
+      "Recall (teste)": 0.778,
+      "Precisão (teste)": 0.196
+    },
+    "Climatologia do mês": {
+      "AP (teste)": 0.133,
+      "ROC-AUC (teste)": 0.676,
+      "Recall (teste)": NaN,
+      "Precisão (teste)": NaN
+    },
+    "Persistência (choveu ≥20 hoje)": {
+      "AP (teste)": 0.105,
+      "ROC-AUC (teste)": 0.57,
+      "Recall (teste)": 0.21,
+      "Precisão (teste)": 0.205
+    },
+    "Sorteio (prevalência)": {
+      "AP (teste)": 0.079,
+      "ROC-AUC (teste)": 0.5,
+      "Recall (teste)": NaN,
+      "Precisão (teste)": NaN
+    }
+  },
+  "leitura_cidadao": [
+    {
+      "nivel": "BAIXO",
+      "dias": 373,
+      "dias_com_chuva_forte": 3,
+      "chuva_media_mm": 0.8471849865951743,
+      "% dos dias com ≥20mm": 0.8,
+      "% de todos os eventos": 3.7
+    },
+    {
+      "nivel": "ATENÇÃO",
+      "dias": 331,
+      "dias_com_chuva_forte": 15,
+      "chuva_media_mm": 3.093051359516616,
+      "% dos dias com ≥20mm": 4.5,
+      "% de todos os eventos": 18.5
+    },
+    {
+      "nivel": "ALTO",
+      "dias": 322,
+      "dias_com_chuva_forte": 63,
+      "chuva_media_mm": 11.583229813664596,
+      "% dos dias com ≥20mm": 19.6,
+      "% de todos os eventos": 77.8
+    }
+  ],
+  "extremos_50mm": {
+    "total": 16,
+    "avisados": 14
+  },
+  "limiares": {
+    "alto": 0.49,
+    "atencao": 0.24
+  }
+}
